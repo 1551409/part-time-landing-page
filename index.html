@@ -1,0 +1,127 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Remote Part-Time Job Application</title>
+    <meta
+      name="description"
+      content="Remote part-time customer support and order assistance opportunity with flexible hours and simple training."
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <main class="page-shell">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-photo" aria-hidden="true"></div>
+
+        <div class="content-wrap">
+          <div class="brand-card" aria-label="Hiring team">
+            <span class="brand-mark">WORK</span>
+            <span class="brand-name">Remote Jobs</span>
+          </div>
+
+          <div class="hero-copy">
+            <p class="eyebrow">Part-Time Remote Opportunity</p>
+            <h1 id="hero-title">Welcome! Thanks for your interest in working with us</h1>
+            <p class="intro">
+              We are looking for motivated people to help with simple online support,
+              order assistance, and customer communication. Flexible schedule, training
+              provided, and no previous experience required.
+            </p>
+
+            <a class="cta-button js-contact-link" href="#" data-placeholder-link>
+              Apply Today
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section class="details" aria-label="Job details">
+        <div class="content-wrap details-grid">
+          <article class="info-panel">
+            <p class="section-kicker">What You Will Do</p>
+            <h2>Simple tasks you can handle from home</h2>
+            <div class="task-grid">
+              <div class="task-item">
+                <span class="task-icon">01</span>
+                <h3>Answer Questions</h3>
+                <p>Respond to basic customer messages and provide clear guidance.</p>
+              </div>
+              <div class="task-item">
+                <span class="task-icon">02</span>
+                <h3>Support Orders</h3>
+                <p>Help review order details and keep simple records updated.</p>
+              </div>
+              <div class="task-item">
+                <span class="task-icon">03</span>
+                <h3>Assist Listings</h3>
+                <p>Follow easy steps to help organize online product information.</p>
+              </div>
+              <div class="task-item">
+                <span class="task-icon">04</span>
+                <h3>Join the Team</h3>
+                <p>Stay connected with support staff and receive task instructions.</p>
+              </div>
+            </div>
+          </article>
+
+          <aside class="summary-panel">
+            <h2>Job Highlights</h2>
+            <ul>
+              <li>Flexible hours, work on your schedule</li>
+              <li>Remote work from home</li>
+              <li>Paid training provided</li>
+              <li>Weekly payment options</li>
+              <li>Beginner friendly</li>
+            </ul>
+            <a class="cta-button cta-button-wide js-contact-link" href="#" data-placeholder-link>
+              Contact Us Now
+            </a>
+          </aside>
+        </div>
+      </section>
+
+      <section class="proof" aria-label="Opportunity preview">
+        <div class="content-wrap">
+          <p class="section-kicker">Similar Opportunities</p>
+          <h2>Remote support roles for motivated applicants</h2>
+          <div class="ad-gallery">
+            <figure>
+              <img class="crop-right" src="assets/hiring-ebay.jpg" alt="Part-time remote work preview" />
+            </figure>
+            <figure>
+              <img src="assets/hiring-fulfillment.jpg" alt="Order support work preview" />
+            </figure>
+            <figure>
+              <img class="crop-right" src="assets/hiring-compose.jpg" alt="Customer support work preview" />
+            </figure>
+          </div>
+        </div>
+      </section>
+
+      <section class="final-cta" aria-label="Apply">
+        <div class="content-wrap final-cta-inner">
+          <div>
+            <p class="section-kicker">Ready to Start?</p>
+            <h2>Click the button and add our support team.</h2>
+          </div>
+          <a class="cta-button js-contact-link" href="#" data-placeholder-link>
+            Apply Today
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const CONTACT_LINK = "";
+
+      document.querySelectorAll(".js-contact-link").forEach((link) => {
+        if (CONTACT_LINK) {
+          link.href = CONTACT_LINK;
+          link.removeAttribute("data-placeholder-link");
+        }
+      });
+    </script>
+  </body>
+</html>
