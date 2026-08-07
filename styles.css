@@ -69,20 +69,10 @@ img {
   box-shadow: 0 18px 44px rgba(18, 32, 51, 0.12);
 }
 
-.brand-mark {
-  color: var(--orange);
-  font-size: 30px;
-  font-weight: 900;
-  line-height: 1;
-}
-
-.brand-name {
-  margin-top: -34px;
-  color: var(--ink);
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
+.brand-icon {
+  width: 108px;
+  height: 108px;
+  object-fit: contain;
 }
 
 .hero-copy {
@@ -296,8 +286,9 @@ h1 {
     margin-top: -62px;
   }
 
-  .brand-mark {
-    font-size: 26px;
+  .brand-icon {
+    width: 96px;
+    height: 96px;
   }
 
   .hero-copy {
