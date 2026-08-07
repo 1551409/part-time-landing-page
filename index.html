@@ -16,79 +16,79 @@
         <div class="hero-photo" aria-hidden="true"></div>
 
         <div class="content-wrap">
-          <div class="brand-card" aria-label="Hiring team">
+          <div class="brand-card" aria-label="Hiring team" data-i18n-aria-label="brandAria">
             <span class="brand-mark">WORK</span>
-            <span class="brand-name">Remote Jobs</span>
+            <span class="brand-name" data-i18n="brandName">Remote Jobs</span>
           </div>
 
           <div class="hero-copy">
-            <p class="eyebrow">Part-Time Remote Opportunity</p>
-            <h1 id="hero-title">Welcome! Thanks for your interest in working with us</h1>
-            <p class="intro">
+            <p class="eyebrow" data-i18n="heroEyebrow">Part-Time Remote Opportunity</p>
+            <h1 id="hero-title" data-i18n="heroTitle">Welcome! Thanks for your interest in working with us</h1>
+            <p class="intro" data-i18n="heroIntro">
               We are looking for motivated people to help with simple online support,
               order assistance, and customer communication. Flexible schedule, training
               provided, and no previous experience required.
             </p>
 
-            <a class="cta-button js-contact-link" href="#" data-placeholder-link>
+            <a class="cta-button js-contact-link" href="#" data-placeholder-link data-i18n="applyCta">
               Apply Today
             </a>
           </div>
         </div>
       </section>
 
-      <section class="details" aria-label="Job details">
+      <section class="details" aria-label="Job details" data-i18n-aria-label="detailsAria">
         <div class="content-wrap details-grid">
           <article class="info-panel">
-            <p class="section-kicker">What You Will Do</p>
-            <h2>Simple tasks you can handle from home</h2>
+            <p class="section-kicker" data-i18n="tasksKicker">What You Will Do</p>
+            <h2 data-i18n="tasksTitle">Simple tasks you can handle from home</h2>
             <div class="task-grid">
               <div class="task-item">
                 <span class="task-icon">01</span>
-                <h3>Answer Questions</h3>
-                <p>Respond to basic customer messages and provide clear guidance.</p>
+                <h3 data-i18n="taskOneTitle">Answer Questions</h3>
+                <p data-i18n="taskOneText">Respond to basic customer messages and provide clear guidance.</p>
               </div>
               <div class="task-item">
                 <span class="task-icon">02</span>
-                <h3>Support Orders</h3>
-                <p>Help review order details and keep simple records updated.</p>
+                <h3 data-i18n="taskTwoTitle">Support Orders</h3>
+                <p data-i18n="taskTwoText">Help review order details and keep simple records updated.</p>
               </div>
               <div class="task-item">
                 <span class="task-icon">03</span>
-                <h3>Assist Listings</h3>
-                <p>Follow easy steps to help organize online product information.</p>
+                <h3 data-i18n="taskThreeTitle">Assist Listings</h3>
+                <p data-i18n="taskThreeText">Follow easy steps to help organize online product information.</p>
               </div>
               <div class="task-item">
                 <span class="task-icon">04</span>
-                <h3>Join the Team</h3>
-                <p>Stay connected with support staff and receive task instructions.</p>
+                <h3 data-i18n="taskFourTitle">Join the Team</h3>
+                <p data-i18n="taskFourText">Stay connected with support staff and receive task instructions.</p>
               </div>
             </div>
           </article>
 
           <aside class="summary-panel">
-            <h2>Job Highlights</h2>
+            <h2 data-i18n="highlightsTitle">Job Highlights</h2>
             <ul>
-              <li>Flexible hours, work on your schedule</li>
-              <li>Remote work from home</li>
-              <li>Paid training provided</li>
-              <li>Weekly payment options</li>
-              <li>Beginner friendly</li>
+              <li data-i18n="highlightOne">Flexible hours, work on your schedule</li>
+              <li data-i18n="highlightTwo">Remote work from home</li>
+              <li data-i18n="highlightThree">Paid training provided</li>
+              <li data-i18n="highlightFour">Weekly payment options</li>
+              <li data-i18n="highlightFive">Beginner friendly</li>
             </ul>
-            <a class="cta-button cta-button-wide js-contact-link" href="#" data-placeholder-link>
+            <a class="cta-button cta-button-wide js-contact-link" href="#" data-placeholder-link data-i18n="contactCta">
               Contact Us Now
             </a>
           </aside>
         </div>
       </section>
 
-      <section class="final-cta" aria-label="Apply">
+      <section class="final-cta" aria-label="Apply" data-i18n-aria-label="applyAria">
         <div class="content-wrap final-cta-inner">
           <div>
-            <p class="section-kicker">Ready to Start?</p>
-            <h2>Click the button and add our support team.</h2>
+            <p class="section-kicker" data-i18n="finalKicker">Ready to Start?</p>
+            <h2 data-i18n="finalTitle">Click the button and add our support team.</h2>
           </div>
-          <a class="cta-button js-contact-link" href="#" data-placeholder-link>
+          <a class="cta-button js-contact-link" href="#" data-placeholder-link data-i18n="applyCta">
             Apply Today
           </a>
         </div>
@@ -97,6 +97,97 @@
 
     <script>
       const CONTACT_LINK = "";
+      const browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
+      const pageLanguage = browserLanguage.toLowerCase().startsWith("es") ? "es-419" : "en";
+      const translations = {
+        en: {
+          pageTitle: "Remote Part-Time Job Application",
+          pageDescription:
+            "Remote part-time customer support and order assistance opportunity with flexible hours and simple training.",
+          brandAria: "Hiring team",
+          brandName: "Remote Jobs",
+          heroEyebrow: "Part-Time Remote Opportunity",
+          heroTitle: "Welcome! Thanks for your interest in working with us",
+          heroIntro:
+            "We are looking for motivated people to help with simple online support, order assistance, and customer communication. Flexible schedule, training provided, and no previous experience required.",
+          applyCta: "Apply Today",
+          detailsAria: "Job details",
+          tasksKicker: "What You Will Do",
+          tasksTitle: "Simple tasks you can handle from home",
+          taskOneTitle: "Answer Questions",
+          taskOneText: "Respond to basic customer messages and provide clear guidance.",
+          taskTwoTitle: "Support Orders",
+          taskTwoText: "Help review order details and keep simple records updated.",
+          taskThreeTitle: "Assist Listings",
+          taskThreeText: "Follow easy steps to help organize online product information.",
+          taskFourTitle: "Join the Team",
+          taskFourText: "Stay connected with support staff and receive task instructions.",
+          highlightsTitle: "Job Highlights",
+          highlightOne: "Flexible hours, work on your schedule",
+          highlightTwo: "Remote work from home",
+          highlightThree: "Paid training provided",
+          highlightFour: "Weekly payment options",
+          highlightFive: "Beginner friendly",
+          contactCta: "Contact Us Now",
+          applyAria: "Apply",
+          finalKicker: "Ready to Start?",
+          finalTitle: "Click the button and add our support team.",
+        },
+        "es-419": {
+          pageTitle: "Solicitud de trabajo remoto de medio tiempo",
+          pageDescription:
+            "Oportunidad remota de medio tiempo en atención al cliente y apoyo con pedidos, con horarios flexibles y capacitación sencilla.",
+          brandAria: "Equipo de contratación",
+          brandName: "Trabajos Remotos",
+          heroEyebrow: "Oportunidad remota de medio tiempo",
+          heroTitle: "¡Bienvenido! Gracias por tu interés en trabajar con nosotros",
+          heroIntro:
+            "Buscamos personas motivadas para ayudar con soporte en línea, asistencia con pedidos y comunicación con clientes. Horarios flexibles, capacitación incluida y no necesitas experiencia previa.",
+          applyCta: "Postúlate hoy",
+          detailsAria: "Detalles del trabajo",
+          tasksKicker: "Lo que harás",
+          tasksTitle: "Tareas sencillas que puedes hacer desde casa",
+          taskOneTitle: "Responder preguntas",
+          taskOneText: "Responde mensajes básicos de clientes y brinda orientación clara.",
+          taskTwoTitle: "Apoyar pedidos",
+          taskTwoText: "Ayuda a revisar detalles de pedidos y mantener registros simples actualizados.",
+          taskThreeTitle: "Ayudar con publicaciones",
+          taskThreeText: "Sigue pasos sencillos para organizar información de productos en línea.",
+          taskFourTitle: "Unirte al equipo",
+          taskFourText: "Mantente conectado con el equipo de soporte y recibe instrucciones de tareas.",
+          highlightsTitle: "Beneficios del trabajo",
+          highlightOne: "Horarios flexibles, trabaja según tu disponibilidad",
+          highlightTwo: "Trabajo remoto desde casa",
+          highlightThree: "Capacitación pagada incluida",
+          highlightFour: "Opciones de pago semanal",
+          highlightFive: "Apto para principiantes",
+          contactCta: "Contáctanos ahora",
+          applyAria: "Postularse",
+          finalKicker: "¿Listo para empezar?",
+          finalTitle: "Haz clic en el botón y agrega a nuestro equipo de soporte.",
+        },
+      };
+      const copy = translations[pageLanguage];
+
+      document.documentElement.lang = pageLanguage;
+      document.title = copy.pageTitle;
+      document
+        .querySelector('meta[name="description"]')
+        ?.setAttribute("content", copy.pageDescription);
+
+      document.querySelectorAll("[data-i18n]").forEach((element) => {
+        const key = element.getAttribute("data-i18n");
+        if (key && copy[key]) {
+          element.textContent = copy[key];
+        }
+      });
+
+      document.querySelectorAll("[data-i18n-aria-label]").forEach((element) => {
+        const key = element.getAttribute("data-i18n-aria-label");
+        if (key && copy[key]) {
+          element.setAttribute("aria-label", copy[key]);
+        }
+      });
 
       document.querySelectorAll(".js-contact-link").forEach((link) => {
         if (CONTACT_LINK) {
