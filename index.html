@@ -98,16 +98,23 @@
       const CONTACT_LINK = "";
       const META_PIXEL_ID = "2233064287539902";
       const urlLanguage = new URLSearchParams(window.location.search).get("lang");
-      const browserLanguage = (navigator.languages && navigator.languages[0]) || navigator.language || "en";
-      const normalizedUrlLanguage = urlLanguage ? urlLanguage.toLowerCase() : "";
-      const pageLanguage =
-        normalizedUrlLanguage === "es" || normalizedUrlLanguage === "es-419"
-          ? "es-419"
-          : normalizedUrlLanguage === "en"
-            ? "en"
-            : browserLanguage.toLowerCase().startsWith("es")
-              ? "es-419"
-              : "en";
+      const browserLanguages = navigator.languages && navigator.languages.length
+        ? navigator.languages
+        : [navigator.language || "en"];
+      const normalizedUrlLanguage = urlLanguage ? urlLanguage.toLowerCase().replace("_", "-") : "";
+
+      function resolvePageLanguage() {
+        if (normalizedUrlLanguage === "es-ar") return "es-AR";
+        if (normalizedUrlLanguage === "es" || normalizedUrlLanguage === "es-419") return "es-419";
+        if (normalizedUrlLanguage === "en") return "en";
+
+        const primaryLanguage = (browserLanguages[0] || "en").toLowerCase().replace("_", "-");
+        if (primaryLanguage === "es-ar" || primaryLanguage.startsWith("es-ar-")) return "es-AR";
+        if (primaryLanguage.startsWith("es")) return "es-419";
+        return "en";
+      }
+
+      const pageLanguage = resolvePageLanguage();
       const translations = {
         en: {
           pageTitle: "Remote Part-Time Job Application",
@@ -172,6 +179,38 @@
           applyAria: "Postularse",
           finalKicker: "¿Listo para empezar?",
           finalTitle: "Haz clic en el botón y agrega a nuestro equipo de soporte.",
+        },
+        "es-AR": {
+          pageTitle: "Solicitud para trabajo remoto part-time",
+          pageDescription:
+            "Oportunidad remota part-time en atención al cliente y apoyo con pedidos, con horarios flexibles y capacitación simple.",
+          brandAria: "Equipo de contratación",
+          heroEyebrow: "Oportunidad remota part-time",
+          heroTitle: "¡Bienvenido! Gracias por tu interés en trabajar con nosotros",
+          heroIntro:
+            "Buscamos personas con ganas de ayudar en soporte online, asistencia con pedidos y comunicación con clientes. Horarios flexibles, capacitación incluida y no necesitás experiencia previa.",
+          applyCta: "Postuláte hoy",
+          detailsAria: "Detalles del trabajo",
+          tasksKicker: "Lo que vas a hacer",
+          tasksTitle: "Tareas simples que podés hacer desde casa",
+          taskOneTitle: "Responder consultas",
+          taskOneText: "Respondé mensajes básicos de clientes y brindá orientación clara.",
+          taskTwoTitle: "Ayudar con pedidos",
+          taskTwoText: "Ayudá a revisar detalles de pedidos y mantener registros simples actualizados.",
+          taskThreeTitle: "Apoyar publicaciones",
+          taskThreeText: "Seguí pasos simples para organizar información de productos online.",
+          taskFourTitle: "Sumarte al equipo",
+          taskFourText: "Mantenete conectado con el equipo de soporte y recibí instrucciones de tareas.",
+          highlightsTitle: "Beneficios del trabajo",
+          highlightOne: "Horarios flexibles, trabajá según tu disponibilidad",
+          highlightTwo: "Trabajo remoto desde casa",
+          highlightThree: "Capacitación paga incluida",
+          highlightFour: "Opciones de pago semanal",
+          highlightFive: "Apto para principiantes",
+          contactCta: "Contactanos ahora",
+          applyAria: "Postularse",
+          finalKicker: "¿Listo para empezar?",
+          finalTitle: "Hacé clic en el botón y agregá a nuestro equipo de soporte.",
         },
       };
       const copy = translations[pageLanguage];
