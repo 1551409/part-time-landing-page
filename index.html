@@ -29,8 +29,9 @@
               provided, and no previous experience required.
             </p>
 
-            <a class="cta-button js-contact-link" href="#" data-placeholder-link data-i18n="applyCta">
-              Apply Today
+            <a class="cta-button whatsapp-button js-contact-link" href="#" data-placeholder-link>
+              <span class="whatsapp-icon" aria-hidden="true">☎</span>
+              <span data-i18n="applyCta">Chat on WhatsApp</span>
             </a>
           </div>
         </div>
@@ -74,21 +75,23 @@
               <li data-i18n="highlightFour">Weekly payment options</li>
               <li data-i18n="highlightFive">Beginner friendly</li>
             </ul>
-            <a class="cta-button cta-button-wide js-contact-link" href="#" data-placeholder-link data-i18n="contactCta">
-              Contact Us Now
+            <a class="cta-button cta-button-wide whatsapp-button js-contact-link" href="#" data-placeholder-link>
+              <span class="whatsapp-icon" aria-hidden="true">☎</span>
+              <span data-i18n="contactCta">Ask on WhatsApp</span>
             </a>
           </aside>
         </div>
       </section>
 
-      <section class="final-cta" aria-label="Apply" data-i18n-aria-label="applyAria">
+      <section class="final-cta" aria-label="Contact on WhatsApp" data-i18n-aria-label="applyAria">
         <div class="content-wrap final-cta-inner">
           <div>
             <p class="section-kicker" data-i18n="finalKicker">Ready to Start?</p>
-            <h2 data-i18n="finalTitle">Click the button and add our support team.</h2>
+            <h2 data-i18n="finalTitle">Click the button and message our support team on WhatsApp.</h2>
           </div>
-          <a class="cta-button js-contact-link" href="#" data-placeholder-link data-i18n="applyCta">
-            Apply Today
+          <a class="cta-button whatsapp-button js-contact-link" href="#" data-placeholder-link>
+            <span class="whatsapp-icon" aria-hidden="true">☎</span>
+            <span data-i18n="applyCta">Chat on WhatsApp</span>
           </a>
         </div>
       </section>
@@ -125,7 +128,7 @@
           heroTitle: "Welcome! Thanks for your interest in working with us",
           heroIntro:
             "We are looking for motivated people to help with simple online support, order assistance, and customer communication. Flexible schedule, training provided, and no previous experience required.",
-          applyCta: "Apply Today",
+          applyCta: "Chat on WhatsApp",
           detailsAria: "Job details",
           tasksKicker: "What You Will Do",
           tasksTitle: "Simple tasks you can handle from home",
@@ -143,10 +146,10 @@
           highlightThree: "Paid training provided",
           highlightFour: "Weekly payment options",
           highlightFive: "Beginner friendly",
-          contactCta: "Contact Us Now",
-          applyAria: "Apply",
+          contactCta: "Ask on WhatsApp",
+          applyAria: "Contact on WhatsApp",
           finalKicker: "Ready to Start?",
-          finalTitle: "Click the button and add our support team.",
+          finalTitle: "Click the button and message our support team on WhatsApp.",
         },
         "es-419": {
           pageTitle: "Solicitud de trabajo remoto de medio tiempo",
@@ -157,7 +160,7 @@
           heroTitle: "¡Bienvenido! Gracias por tu interés en trabajar con nosotros",
           heroIntro:
             "Buscamos personas motivadas para ayudar con soporte en línea, asistencia con pedidos y comunicación con clientes. Horarios flexibles, capacitación incluida y no necesitas experiencia previa.",
-          applyCta: "Postúlate hoy",
+          applyCta: "Escríbenos por WhatsApp",
           detailsAria: "Detalles del trabajo",
           tasksKicker: "Lo que harás",
           tasksTitle: "Tareas sencillas que puedes hacer desde casa",
@@ -175,10 +178,10 @@
           highlightThree: "Capacitación pagada incluida",
           highlightFour: "Opciones de pago semanal",
           highlightFive: "Apto para principiantes",
-          contactCta: "Contáctanos ahora",
-          applyAria: "Postularse",
+          contactCta: "Consulta por WhatsApp",
+          applyAria: "Contactar por WhatsApp",
           finalKicker: "¿Listo para empezar?",
-          finalTitle: "Haz clic en el botón y agrega a nuestro equipo de soporte.",
+          finalTitle: "Haz clic en el botón y escríbenos por WhatsApp.",
         },
         "es-AR": {
           pageTitle: "Solicitud para trabajo remoto part-time",
@@ -189,7 +192,7 @@
           heroTitle: "¡Bienvenido! Gracias por tu interés en trabajar con nosotros",
           heroIntro:
             "Buscamos personas con ganas de ayudar en soporte online, asistencia con pedidos y comunicación con clientes. Horarios flexibles, capacitación incluida y no necesitás experiencia previa.",
-          applyCta: "Postuláte hoy",
+          applyCta: "Escribinos por WhatsApp",
           detailsAria: "Detalles del trabajo",
           tasksKicker: "Lo que vas a hacer",
           tasksTitle: "Tareas simples que podés hacer desde casa",
@@ -207,10 +210,10 @@
           highlightThree: "Capacitación paga incluida",
           highlightFour: "Opciones de pago semanal",
           highlightFive: "Apto para principiantes",
-          contactCta: "Contactanos ahora",
-          applyAria: "Postularse",
+          contactCta: "Consultá por WhatsApp",
+          applyAria: "Contactar por WhatsApp",
           finalKicker: "¿Listo para empezar?",
-          finalTitle: "Hacé clic en el botón y agregá a nuestro equipo de soporte.",
+          finalTitle: "Hacé clic en el botón y escribinos por WhatsApp.",
         },
       };
       const copy = translations[pageLanguage];
@@ -244,7 +247,7 @@
         link.addEventListener("click", () => {
           if (window.fbq) {
             window.fbq("track", "Lead", {
-              content_name: "part_time_landing_page_cta",
+              content_name: "part_time_landing_page_whatsapp_cta",
               language: pageLanguage,
             });
           }
