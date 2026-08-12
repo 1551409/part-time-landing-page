@@ -11,6 +11,11 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
+    <svg class="svg-sprite" aria-hidden="true" focusable="false">
+      <symbol id="icon-whatsapp" viewBox="0 0 32 32">
+        <path d="M16.04 2.67C8.68 2.67 2.7 8.65 2.7 16c0 2.35.62 4.64 1.8 6.66l-1.9 6.67 6.83-1.79a13.28 13.28 0 0 0 6.61 1.76h.01c7.35 0 13.33-5.98 13.33-13.33 0-3.56-1.39-6.91-3.91-9.43a13.25 13.25 0 0 0-9.43-3.87Zm0 24.38h-.01a11.02 11.02 0 0 1-5.62-1.54l-.4-.24-4.05 1.06 1.08-3.95-.26-.41A11.04 11.04 0 0 1 5.06 16c0-6.06 4.93-10.99 10.99-10.99 2.94 0 5.7 1.14 7.78 3.22A10.92 10.92 0 0 1 27.05 16c0 6.06-4.94 11.05-11.01 11.05Zm6.04-8.27c-.33-.17-1.96-.97-2.26-1.08-.3-.11-.52-.17-.74.17-.22.33-.85 1.08-1.04 1.3-.19.22-.38.25-.71.08-.33-.17-1.4-.52-2.67-1.65-.99-.88-1.65-1.97-1.84-2.3-.19-.33-.02-.51.15-.68.15-.15.33-.38.5-.58.17-.19.22-.33.33-.55.11-.22.06-.41-.03-.58-.08-.17-.74-1.79-1.01-2.45-.27-.64-.54-.55-.74-.56l-.63-.01c-.22 0-.58.08-.88.41-.3.33-1.15 1.13-1.15 2.75s1.18 3.18 1.35 3.4c.17.22 2.33 3.56 5.64 4.99.79.34 1.4.54 1.88.69.79.25 1.51.21 2.08.13.63-.09 1.96-.8 2.23-1.57.28-.77.28-1.43.19-1.57-.08-.14-.3-.22-.63-.38Z" />
+      </symbol>
+    </svg>
     <main class="page-shell">
       <section class="hero" aria-labelledby="hero-title">
         <div class="hero-photo" aria-hidden="true"></div>
@@ -30,7 +35,11 @@
             </p>
 
             <a class="cta-button whatsapp-button js-contact-link" href="#" data-placeholder-link>
-              <span class="whatsapp-icon" aria-hidden="true">☎</span>
+              <span class="whatsapp-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <use href="#icon-whatsapp"></use>
+                </svg>
+              </span>
               <span data-i18n="applyCta">Chat on WhatsApp</span>
             </a>
           </div>
@@ -76,7 +85,11 @@
               <li data-i18n="highlightFive">Beginner friendly</li>
             </ul>
             <a class="cta-button cta-button-wide whatsapp-button js-contact-link" href="#" data-placeholder-link>
-              <span class="whatsapp-icon" aria-hidden="true">☎</span>
+              <span class="whatsapp-icon" aria-hidden="true">
+                <svg viewBox="0 0 32 32" focusable="false">
+                  <use href="#icon-whatsapp"></use>
+                </svg>
+              </span>
               <span data-i18n="contactCta">Ask on WhatsApp</span>
             </a>
           </aside>
@@ -90,7 +103,11 @@
             <h2 data-i18n="finalTitle">Click the button and message our support team on WhatsApp.</h2>
           </div>
           <a class="cta-button whatsapp-button js-contact-link" href="#" data-placeholder-link>
-            <span class="whatsapp-icon" aria-hidden="true">☎</span>
+            <span class="whatsapp-icon" aria-hidden="true">
+              <svg viewBox="0 0 32 32" focusable="false">
+                <use href="#icon-whatsapp"></use>
+              </svg>
+            </span>
             <span data-i18n="applyCta">Chat on WhatsApp</span>
           </a>
         </div>
@@ -98,6 +115,7 @@
     </main>
 
     <script>
+      const WHATSAPP_NUMBER = "";
       const CONTACT_LINK = "";
       const META_PIXEL_ID = "2233064287539902";
       const urlLanguage = new URLSearchParams(window.location.search).get("lang");
@@ -150,6 +168,7 @@
           applyAria: "Contact on WhatsApp",
           finalKicker: "Ready to Start?",
           finalTitle: "Click the button and message our support team on WhatsApp.",
+          whatsappMessage: "Hi, I am interested in the remote part-time job.",
         },
         "es-419": {
           pageTitle: "Solicitud de trabajo remoto de medio tiempo",
@@ -182,6 +201,7 @@
           applyAria: "Contactar por WhatsApp",
           finalKicker: "¿Listo para empezar?",
           finalTitle: "Haz clic en el botón y escríbenos por WhatsApp.",
+          whatsappMessage: "Hola, me interesa el trabajo remoto de medio tiempo.",
         },
         "es-AR": {
           pageTitle: "Solicitud para trabajo remoto part-time",
@@ -214,9 +234,13 @@
           applyAria: "Contactar por WhatsApp",
           finalKicker: "¿Listo para empezar?",
           finalTitle: "Hacé clic en el botón y escribinos por WhatsApp.",
+          whatsappMessage: "Hola, me interesa el trabajo remoto part-time.",
         },
       };
       const copy = translations[pageLanguage];
+      const contactLink = WHATSAPP_NUMBER
+        ? `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(copy.whatsappMessage)}`
+        : CONTACT_LINK;
 
       document.documentElement.lang = pageLanguage;
       document.title = copy.pageTitle;
@@ -239,8 +263,10 @@
       });
 
       document.querySelectorAll(".js-contact-link").forEach((link) => {
-        if (CONTACT_LINK) {
-          link.href = CONTACT_LINK;
+        if (contactLink) {
+          link.href = contactLink;
+          link.target = "_blank";
+          link.rel = "noopener";
           link.removeAttribute("data-placeholder-link");
         }
 
